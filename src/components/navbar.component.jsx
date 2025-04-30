@@ -1,6 +1,9 @@
 import { useState } from "react";
 import logo from "../imgs/logo.png";
 import { Link, Outlet } from "react-router-dom";
+import UserNavigationPanel from "./user-navigation.component";
+
+
 
 const Navbar = () => {
     const [searchBoxVisibility, setSearchBoxVisibility] = useState(false);
@@ -41,7 +44,7 @@ const Navbar = () => {
                     </Link>
 
                     {/*
-
+                         # if access token is granted 
                         access_token ?
                        <>
                         <Link to ="/dashboard/notification">
@@ -51,11 +54,37 @@ const Navbar = () => {
                           </button>
 
                         </Link>
+
+                        <div className="relative">
+                           <button className="w-12 h-12 mt-1">
+                              <img src="{profile_img}"
+                                className="w-full h-full object-cover
+                                    rounded-full"/>
+                            <button>
+
+
+
+
+
+                        </div>
                        
                        </>
                        : ""
+                           ## if no access token render the sign in part
+                       <>
+                          <Link className="btn-dark py-2" to="/signin">
+                                Sign In
+                          </Link>
+                         <Link className="btn-light py-2 hidden md:block" to="/signup">
+                                 Sign Up
+                          </Link>
+
+
+                       </>
                     */}
 
+                      
+                     <UserNavigationPanel/>
                     <Link className="btn-dark py-2" to="/signin">
                         Sign In
                     </Link>
