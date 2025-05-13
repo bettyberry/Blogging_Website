@@ -11,7 +11,8 @@ const Sidebar = ({ onMenuClick }) => {
     { id: "notifications", icon: <FiBell size={24} />, label: "Notifications" },
     { id: "logout", icon: <FiLogOut size={24} />, label: "Logout" },
   ];
-   return (
+
+  return (
     <div className="flex">
       {/* Sidebar */}
       <aside className="w-80 h-screen bg-gray-900 text-black flex flex-col overflow-y-auto">
@@ -54,8 +55,6 @@ const Sidebar = ({ onMenuClick }) => {
         </div>
       </aside>
 
-
- 
       {/* Main Content */}
       <main className="ml-80 p-8 w-full bg-gray-100">
         <div className="grid grid-cols-3 gap-6">
