@@ -25,13 +25,7 @@ const App = () => {
         <Route path="blogs/report/:id" element={<ViewReport />} />
         <Route path="reports" element={<AdminDashboard />} />
       </Route>
-      <Route
-        path="/dashboard"
-        element={
-          <AdminLayout>
-            <Dashboard />
-          </AdminLayout>
-        }
+      <Route path="/dashboard" element={<AdminLayout> <Dashboard /> </AdminLayout> }
       />
       <Route path="blogs/edit/:id" element={<EditBlog />} />
       <Route path="/editor" element={<CreateBlog />} />
