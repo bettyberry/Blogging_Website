@@ -43,6 +43,17 @@ const AdminLayout = () => {
       case "logout":
         return <h2 className="text-2xl font-bold">You have been logged out.</h2>;
       default:
+        return (
+    <div className="flex">
+      <Sidebar onMenuClick={setActiveContent} />
+      <main className="ml-72 p-8 w-full bg-gray-100 min-h-screen">
+        {renderContent()}
+      </main>
+    </div>
+  );
+};
+
+export default AdminLayout;
         return <h2 className="text-2xl font-bold">Dashboard</h2>;
     }
   };
