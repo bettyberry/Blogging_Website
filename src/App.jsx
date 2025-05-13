@@ -7,15 +7,25 @@ import TestConnection from "./pages/testpage.tsx"; // Import your TestConnection
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navbar />}>
+      <Route element={<Wrapper />}>
+        <Route path="/" element={<Home />} />
         <Route path="signin" element={<UserAuthForm type="sign-in" />} />
         <Route path="signup" element={<UserAuthForm type="sign-up" />} />
-        <Route path="/test" element={<TestConnection />} />
+        <Route path="blogs/:id" element={<ViewBlog />} />
+        <Route path="blogs/report/:id" element={<ViewReport />} />
+        <Route path="reports" element={<AdminDashboard />} />
       </Route>
-      <Route path="/editor" element={<Editor />} />{" "}
-      {/* Separate route for Editor */}
+      <Route
+        path="/dashboard"
+        element={
+          <AdminLayout>
+            <Dashboard />
+          </AdminLayout>
+        }
+      />
+      <Route path="blogs/edit/:id" element={<EditBlog />} />
+      <Route path="/editor" element={<CreateBlog />} />
     </Routes>
   );
-};
 
 export default App;
