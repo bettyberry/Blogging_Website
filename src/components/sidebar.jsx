@@ -22,7 +22,6 @@ const Sidebar = ({ onMenuClick }) => {
         </a>
       </div>
 
-      {/* Navigation Menu */}
       <nav className="mt-6">
         <ul>
           {menuItems.map((item) => (
