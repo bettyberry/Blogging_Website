@@ -14,9 +14,9 @@ const Sidebar = ({ onMenuClick }) => {
 
   return (
     <div className="flex">
-      {/* Sidebar */}
+   
       <aside className="w-80 h-screen bg-gray-900 text-black flex flex-col overflow-y-auto">
-        {/* Logo Section */}
+        
         <div className="p-6">
           <div className="flex items-center gap-4">
             <img src="/src/imgs/logo.png" alt="Logo" className="w-16 h-16" />
@@ -24,7 +24,6 @@ const Sidebar = ({ onMenuClick }) => {
           </div>
         </div>
 
-        {/* Scrollable Navigation Menu */}
         <div className="flex-1 py-4">
           <nav>
             <ul className="space-y-2 px-4">
@@ -43,7 +42,6 @@ const Sidebar = ({ onMenuClick }) => {
           </nav>
         </div>
 
-        {/* Fixed Logout Button */}
         <div className="p-4">
           <button
             onClick={() => onMenuClick("logout")}
@@ -55,7 +53,6 @@ const Sidebar = ({ onMenuClick }) => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="ml-80 p-8 w-full bg-gray-100">
         <div className="grid grid-cols-3 gap-6">
           <div className="bg-white shadow rounded-lg p-8">
