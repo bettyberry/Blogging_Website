@@ -1,8 +1,18 @@
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar.component";
-import UserAuthForm from "./pages/userAuthForm.page";
-import Editor from "./pages/editor.pages"; // Import your Editor component
-import TestConnection from "./pages/testpage.tsx"; // Import your TestConnection component
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/navbar.component';
+import UserAuthForm from './pages/userAuthForm.page';
+import Editor from './pages/editor.pages'; // Import your Editor component
+import Home from './pages/dashboard/Home';
+import Wrapper from './components/Wrapper';
+import ViewBlog from './pages/blog/ViewBlog';
+import EditBlog from './pages/blog/EditBlog';
+import Reports from './pages/blog/Reports';
+import AdminDashboard from './pages/Admin/adminDashboard';
+import ViewReport from './pages/blog/ViewReport';
+import CreateBlog from './features/blog/CreateBlog';
+import AdminLayout from './components/AdminLayout';
+import NewAdminPage from './pages/Admin/NewAdminpage';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
   return (
@@ -27,5 +37,6 @@ const App = () => {
       <Route path="/editor" element={<CreateBlog />} />
     </Routes>
   );
+};
 
 export default App;
