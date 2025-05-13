@@ -11,6 +11,49 @@ const Sidebar = ({ onMenuClick }) => {
     { id: "notifications", icon: <FiBell size={24} />, label: "Notifications" },
     { id: "logout", icon: <FiLogOut size={24} />, label: "Logout" },
   ];
+   return (
+    <div className="flex">
+      {/* Sidebar */}
+      <aside className="w-80 h-screen bg-gray-900 text-black flex flex-col overflow-y-auto">
+        {/* Logo Section */}
+        <div className="p-6">
+          <div className="flex items-center gap-4">
+            <img src="/src/imgs/logo.png" alt="Logo" className="w-16 h-16" />
+            <span className="text-3xl font-bold">Admin Panel</span>
+          </div>
+        </div>
+
+        {/* Scrollable Navigation Menu */}
+        <div className="flex-1 py-4">
+          <nav>
+            <ul className="space-y-2 px-4">
+              {mainMenuItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => onMenuClick(item.id)}
+                    className="w-full p-4 hover:bg-gray-700 rounded-lg flex items-center gap-4 text-left transition-colors duration-200"
+                  >
+                    <span>{item.icon}</span>
+                    <span className="text-xl">{item.label}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Fixed Logout Button */}
+        <div className="p-4">
+          <button
+            onClick={() => onMenuClick("logout")}
+            className="w-full p-4 hover:bg-gray-700 rounded-lg flex items-center gap-4 text-left transition-colors duration-200"
+          >
+            <FiLogOut size={24} />
+            <span className="text-xl">Logout</span>
+          </button>
+        </div>
+      </aside>
+
 
  
       {/* Main Content */}
